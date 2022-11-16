@@ -118,9 +118,9 @@ sel<="111";
  end process;
 END;
 
-____UCF___
+___ALU UCF______________________________________________________________________________
 
-[0:30 am, 17/11/2022] Abhishek Phapale: ALU UCF FILE:-
+
 
 NET A(0) LOC = P101;
 
@@ -153,7 +153,11 @@ NET Y(3) LOC = P161;
 
 _____________________________________________________________________________________
 
+
+
 USER
+
+
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -208,7 +212,7 @@ end if;
 end process;
 end Behavioral;
 
-_____Test Bench___
+_____Test Bench__________________________
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -290,91 +294,10 @@ mode<="11";
 END;
 
 
-__________Test bench____________
 
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
-ENTITY GHJ IS
-END GHJ;
-ARCHITECTURE behavior OF GHJ IS 
- -- Component Declaration for the Unit Under Test (UUT)
- COMPONENT ALU
- PORT(
- a : IN std_logic_vector(3 downto 0);
- b : IN std_logic_vector(3 downto 0);
- sel : IN std_logic_vector(2 downto 0);
- z : OUT std_logic_vector(3 downto 0)
- );
- END COMPONENT;
- --Inputs
- signal a : std_logic_vector(3 downto 0) := (others => '0');
- signal b : std_logic_vector(3 downto 0) := (others => '0');
- signal sel : std_logic_vector(2 downto 0) := (others => '0');
---Outputs
- signal z : std_logic_vector(3 downto 0);
-BEGIN
--- Instantiate the Unit Under Test (UUT)
- uut: ALU PORT MAP (
- a => a,
- b => b,
- sel => sel,
- z => z
- );
- -- Stimulus process
- stim_proc: process
- begin
-a<="1010";
-b<="0101";
-sel<="000";
- -- hold reset state for 100 ns.
- wait for 100 ns;
-a<="1010";
-b<="0101";
-sel<="001";
- -- hold reset state for 100 ns.
- wait for 100 ns;
-a<="1010";
-b<="0101";
-sel<="010";
- -- hold reset state for 100 ns.
- wait for 100 ns;
-a<="1010";
-b<="0101";
-sel<="011";
- -- hold reset state for 100 ns.
- wait for 100 ns;
-a<="1010";
-b<="0101";
-sel<="100";
- -- hold reset state for 100 ns.
- wait for 100 ns;
-a<="1010";
-b<="0101";
-sel<="101";
- -- hold reset state for 100 ns.
- wait for 100 ns;
-a<="1010";
-b<="0101";
-sel<="110";
- -- hold reset state for 100 ns.
- wait for 100 ns;
-a<="1010";
-b<="0101";
-sel<="111";
- -- hold reset state for 100 ns.
- wait for 100 ns;
--- wait for <clock>_period*10;
- -- insert stimulus here 
- wait;
- end process;
-END;
+____USER ____UCF _______________
 
-____UCF____
-
-[0:31 am, 17/11/2022] Abhishek Phapale: NET clk LOC = P183;
+ NET clk LOC = P183;
 
 NET rst LOC = P102;
 
@@ -449,7 +372,7 @@ Y<=temp;
  
 end Behavioral;
 
-___Test bench ___
+___Test bench ____________________________________________________
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -503,7 +426,7 @@ rst<='0';
  end process;
 END;
 
-_____ UCF file____
+_____ UCF file_____________________________________________________________
 
 NET clk LOC = p183;
 NET rst LOC = p102;
@@ -566,7 +489,7 @@ end case;
 end if;
 end process;
 end Behavioral;
-_______test bench________
+_______test bench______________________________________________________________
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -626,7 +549,7 @@ wait for 10 ns;
  end process;
 END;
 
-______ucf file___
+______ucf file_________________________________________
 
 NET data(0) LOC = P62;
 NET data(1) LOC = P63;
